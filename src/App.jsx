@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { HiOutlineRefresh } from 'react-icons/hi'; // Assure-toi que react-icons est installé
 import Cards from './components/Cards';
 import Chrono from './components/Chrono';
-
+import { GoIssueOpened } from "react-icons/go";
 function App() {
   const [start, setStart] = useState(false);
   const [score, setScore] = useState(0);
@@ -50,13 +50,13 @@ function App() {
           style={{
             width: '100px',
             height: '75px',
-            borderRadius: '10px',
+            borderRadius: '50%',
             fontSize: '20px',
             cursor: 'pointer',
           }}
           onClick={startGame}
         >
-          Start
+          <GoIssueOpened />
         </button>
       ) : isGameFinished ? (
         <div className="congratulations">
