@@ -32,9 +32,9 @@ function App() {
   const startGame = () => {
     setStart(true);
     setIsRunning(true); // Démarre le chrono
-    setScore(0); // Réinitialise le score
     setTime(0);  // Réinitialise le temps
     setIsGameFinished(false); // Réinitialise l'état du jeu terminé
+    // Le score n'est pas réinitialisé ici pour continuer à partir du score précédent
   };
 
   // Fonction pour terminer le jeu
@@ -62,7 +62,7 @@ function App() {
         <div className="congratulations">
           <h1 style={{ color: 'blue' }}>Félicitations, vous avez terminé !</h1>
           <p>Temps écoulé : {time} secondes</p>
-          <p>Score : {score}</p>
+          <p>Score cumulé : {score}</p>
           <button onClick={startGame}>
             <HiOutlineRefresh /> Rejouer
           </button>
