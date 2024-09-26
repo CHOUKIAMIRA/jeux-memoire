@@ -20,7 +20,7 @@ text-align: center;
  } */
   body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background: url("./assets/bg.PNG") no-repeat center center;
+    background: url("/jeux-memoire/img/bg.PNG") no-repeat center center;
     background-size: cover; 
     display: flex;
     justify-content: center;
@@ -41,7 +41,7 @@ text-align: center;
   }
   
   .card{
-    background-image: url("./assets/dos-hs-xl.png");
+    background-image: url("/jeux-memoire/img/dos-hs-xl.png");
     background-size: cover; /* ou 'contain' selon ton besoin */
     background-position: center;
     
