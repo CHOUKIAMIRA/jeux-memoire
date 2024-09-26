@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { HiOutlineRefresh } from 'react-icons/hi'; // Assure-toi que react-icons est installé
 import Cards from './components/Cards';
 import Chrono from './components/Chrono';
 
@@ -7,6 +8,7 @@ function App() {
   const [score, setScore] = useState(0);
   const [time, setTime] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
+  const [isGameFinished, setIsGameFinished] = useState(false);
 
   // Démarre ou arrête le chronomètre
   useEffect(() => {
@@ -30,6 +32,15 @@ function App() {
   const startGame = () => {
     setStart(true);
     setIsRunning(true); // Démarre le chrono
+    setScore(0); // Réinitialise le score
+    setTime(0);  // Réinitialise le temps
+    setIsGameFinished(false); // Réinitialise l'état du jeu terminé
+  };
+
+  // Fonction pour terminer le jeu
+  const finishGame = () => {
+    setIsRunning(false); // Arrête le chrono
+    setIsGameFinished(true); // Marque le jeu comme terminé
   };
 
   return (
@@ -37,27 +48,33 @@ function App() {
       {!start ? (
         <button
           style={{
-            width: '200px',
-            height: '150px',
-            borderRadius: '20px',
-            fontSize: '40px',
+            width: '100px',
+            height: '75px',
+            borderRadius: '10px',
+            fontSize: '20px',
             cursor: 'pointer',
           }}
           onClick={startGame}
         >
           Start
         </button>
+      ) : isGameFinished ? (
+        <div className="congratulations">
+          <h1 style={{ color: 'blue' }}>Félicitations, vous avez terminé !</h1>
+          <p>Temps écoulé : {time} secondes</p>
+          <p>Score : {score}</p>
+          <button onClick={startGame}>
+            <HiOutlineRefresh /> Rejouer
+          </button>
+        </div>
       ) : (
         <div>
           <div>
-            <Chrono time={time} /> {/* Affiche le chrono */}
+            <Chrono time={time} score={score} />
           </div>
           <br />
           <div>
-            Score: {score} {/* Affiche le score */}
-          </div>
-          <div>
-            <Cards updateScore={increaseScore} /> {/* Passe la fonction de mise à jour du score */}
+            <Cards updateScore={increaseScore} finishGame={finishGame} />
           </div>
         </div>
       )}
