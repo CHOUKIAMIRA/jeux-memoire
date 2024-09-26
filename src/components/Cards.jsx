@@ -3,22 +3,22 @@ import Card from './Card'
 
 function Cards(){
     const [items, setItems] = useState([
-        { id: 1, img: 'src/assets/1.png', stat: "" },
-    { id: 1, img: 'src/assets/1.png', stat: "" },
-    { id: 2, img: 'src/assets/3.png', stat: "" },
-    { id: 2, img: 'src/assets/3.png', stat: "" },
-    { id: 3, img: 'src/assets/4.png', stat: "" },
-    { id: 3, img: 'src/assets/4.png', stat: "" },
-    { id: 4, img: 'src/assets/5.png', stat: "" },
-    { id: 4, img: 'src/assets/5.png', stat: "" },
-    { id: 5, img: 'src/assets/6.png', stat: "" },
-    { id: 5, img: 'src/assets/6.png', stat: "" },
-    { id: 6, img: 'src/assets/8.png', stat: "" },
-    { id: 6, img: 'src/assets/8.png', stat: "" },
-    { id: 7, img: 'src/assets/9.png', stat: "" },
-    { id: 7, img: 'src/assets/9.png', stat: "" },
-    { id: 8, img: 'src/assets/10.png', stat: "" },
-    { id: 8, img: 'src/assets/10.png', stat: "" }
+        { id: 1, img: '/jeux-memoire/img/1.png', stat: "" },
+        { id: 1, img: '/jeux-memoire/img/1.png', stat: "" },
+        { id: 2, img: '/jeux-memoire/img/3.png', stat: "" },
+        { id: 2, img: '/jeux-memoire/img/3.png', stat: "" },
+        { id: 3, img: '/jeux-memoire/img/4.png', stat: "" },
+        { id: 3, img: '/jeux-memoire/img/4.png', stat: "" },
+        { id: 4, img: '/jeux-memoire/img/5.png', stat: "" },
+        { id: 4, img: '/jeux-memoire/img/5.png', stat: "" },
+        { id: 5, img: '/jeux-memoire/img/6.png', stat: "" },
+        { id: 5, img: '/jeux-memoire/img/6.png', stat: "" },
+        { id: 6, img: '/jeux-memoire/img/8.png', stat: "" },
+        { id: 6, img: '/jeux-memoire/img/8.png', stat: "" },
+        { id: 7, img: '/jeux-memoire/img/9.png', stat: "" },
+        { id: 7, img: '/jeux-memoire/img/9.png', stat: "" },
+        { id: 8, img: '/jeux-memoire/img/10.png', stat: "" },
+        { id: 8, img: '/jeux-memoire/img/10.png', stat: "" }
     ].sort(() => Math.random() - 0.5))
 
     const [prev, setPrev] = useState(-1)
